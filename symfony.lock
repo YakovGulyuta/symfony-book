@@ -88,7 +88,7 @@
         "version": "2.2.3"
     },
     "php": {
-        "version": "7.3"
+        "version": "7.4"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -329,11 +329,11 @@
             "config/routes/dev/web_profiler.yaml"
         ]
     },
-    "symfony/yaml": {
-        "version": "v5.2.0"
-    },
     "twig/twig": {
         "version": "v3.1.1"
+    },
+    "webimpress/safe-writer": {
+        "version": "2.1.0"
     },
     "zendframework/zend-code": {
         "version": "3.4.1"
