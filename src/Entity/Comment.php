@@ -32,13 +32,13 @@ class Comment
 
   /**
    * @ORM\Column(type="string", length=255)
+   * @Assert\NotBlank
+   * @Assert\Email
    */
   private $email;
 
   /**
    * @ORM\Column(type="datetime")
-   * @Assert\NotBlank
-   * @Assert\Email
    */
   private $createdAt;
 
