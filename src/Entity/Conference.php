@@ -65,6 +65,7 @@ class Conference
     return $this->city . ' ' . $this->year;
   }
 
+
   public function getId(): ?int
   {
     return $this->id;
