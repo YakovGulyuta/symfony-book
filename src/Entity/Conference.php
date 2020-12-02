@@ -11,6 +11,7 @@ use Symfony\Component\String\Slugger\SluggerInterface;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ConferenceRepository")
  * @UniqueEntity("slug")
+ *
  */
 class Conference
 {
@@ -50,6 +51,7 @@ class Conference
   {
     $this->comments = new ArrayCollection();
   }
+
 
   public function computeSlug(SluggerInterface $slugger)
   {
