@@ -62,6 +62,7 @@ class Comment
    * @ORM\ManyToOne(targetEntity="App\Entity\Conference", inversedBy="comments")
    * @ORM\JoinColumn(nullable=false)
    * @Groups({"comment:list", "comment:item"})
+   *
    */
   private $conference;
 
