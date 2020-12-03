@@ -31,7 +31,15 @@ class ConferenceController extends AbstractController
   }
 
   /**
-   * @Route("/", name="homepage")
+   * @Route("/")
+   */
+  public function indexNoLocale()
+  {
+    return $this->redirectToRoute('homepage', ['_locale' => 'en']);
+  }
+
+  /**
+   * @Route("/{_locale<%app.supported_locales%>}/", name="homepage")
    */
   public function index(ConferenceRepository $conferenceRepository)
   {
@@ -41,7 +49,20 @@ class ConferenceController extends AbstractController
   }
 
   /**
-   * @Route("/conference/{slug}", name="conference")
+   * @Route("/{_locale<%app.supported_locales%>}/conference_header", name="conference_header")
+   */
+  public function conferenceHeader(ConferenceRepository $conferenceRepository)
+  {
+    $response = new Response($this->twig->render('conference/header.html.twig', [
+      'conferences' => $conferenceRepository->findAll(),
+    ]));
+    $response->setSharedMaxAge(3600);
+
+    return $response;
+  }
+
+  /**
+   * @Route("/{_locale<%app.supported_locales%>}/conference/{slug}", name="conference")
    */
   public function show(Request $request, Conference $conference, CommentRepository $commentRepository, string $photoDir)
   {
